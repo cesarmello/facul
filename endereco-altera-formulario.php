@@ -7,7 +7,7 @@ require_once ('logica-usuario.php');
 verificaUsuario();
 
 $id_endereco = $_GET['id'];
-$id_parceiro = $_GET['p'];
+$id_medico = $_GET['p'];
 $endereco = buscaEndereco($conexao, $id_endereco);
 $telefone = buscaTelefone($conexao, $id_endereco);
 
@@ -16,10 +16,10 @@ $telefone = buscaTelefone($conexao, $id_endereco);
 <h1>Alterando Endereço</h1>
 <form action="altera-endereco.php" method="post">
 	<input type="hidden" name="id_endereco" value="<?=$endereco['id_endereco']?>">
-	<input type="hidden" name="id_parceiro" value="<?=$endereco['id_parceiro']?>">	
+	<input type="hidden" name="id_medico" value="<?=$endereco['id_medico']?>">	
 	<table class="table">
 
-		<?php require_once ('parceiro-formulario-base-endereco.php');?>
+		<?php require_once ('medico-formulario-base-endereco.php');?>
 
 		</tr>
 		<tr>

@@ -29,7 +29,6 @@
 		<?php foreach ($telefone as $tel) : ?>
 		<tr>
 			<td>Telefone</td>
-			<td><input type="text" name="telefone" value="<?=$tel['telefone']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="11"/></td>
+			<td><input type="text" name="telefone" id="telefone" value="<?=$tel['telefone']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="11"/></td>
 		</tr>
 		<?php endforeach ?>
-		<script src="js/masc.js"></script>

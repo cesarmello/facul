@@ -8,10 +8,10 @@ verificaUsuario();
 $telefone = array("telefone" => "");
 ?>
 <h1>Adicionando Telefone</h1>
-<form action="adiciona-parceiro-telefone.php" method="post">
+<form action="adiciona-medico-telefone.php" method="post">
 	<table class="table">
 	
-		<?php require_once ('parceiro-formulario-base-telefone.php');?>
+		<?php require_once ('medico-formulario-base-telefone.php');?>
 
 		</tr>
 		<tr>

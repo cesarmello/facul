@@ -6,14 +6,14 @@ require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$id_parceiro = $_GET['id'];
+$id_medico = $_GET['id'];
 ?>
 <h1>Alterando Endereço</h1>
 <form action="adiciona-endereco.php" method="post">
-	<input type="hidden" name="id_parceiro" value="<?=$id_parceiro?>">	
+	<input type="hidden" name="id_medico" value="<?=$id_medico?>">	
 	<table class="table">
 
-		<?php require_once ('parceiro-formulario-base-endereco.php');?>
+		<?php require_once ('medico-formulario-base-endereco.php');?>
 
 		</tr>
 		<tr>

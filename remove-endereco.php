@@ -3,9 +3,9 @@ require_once ('cabecalho.php');
 require_once ('banco-endereco.php');
 require_once ('logica-usuario.php');
 
-$id_parceiro= $_POST['id_parceiro'];
+$id_medico= $_POST['id_medico'];
 $id_endereco= $_POST['id_endereco'];
 removeEndereco($conexao, $id_endereco);
 $_SESSION["success"] = "Endereço removido com sucesso.";
-header("Location: parceiro-altera-formulario.php?id=$id_parceiro");
+header("Location: medico-altera-formulario.php?id=$id_medico");
 die();

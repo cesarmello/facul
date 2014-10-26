@@ -13,7 +13,7 @@ verificaUsuario();
 		<tr>
 			<td><h1 class="text-bold">Pacientes</h1></td>
 			<td></td>
-			<td class="text-center"><a class="btn btn-primary" href="paciente-formulario.php">Adicionar</a></td>
+			<td class="text-center"><a class="btn btn-primary" href="paciente-cadastrar.php">Adicionar</a></td>
 		</tr>
 
 		<tr>
@@ -36,7 +36,6 @@ verificaUsuario();
 			</td>
 		</tr>
 		<?php endforeach ?>
-
 
 	</table>
 	

@@ -1,4 +1,0 @@
-GuiaOnline
-==========
-
-GuiaOnline

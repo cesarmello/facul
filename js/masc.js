@@ -1,3 +1,10 @@
+$(document).ready(function() {
+	$('#areas').change(function() {
+		$('#especialidades').load('especialidades.php?area=' + $('#areas').val());
+	});
+});
+
+
 jQuery(function($){
 	$("#telefone").mask("(99) 9999-9999");        // 14 Aqui montamos a mascara que queremos
 	$("#tel").mask("(99) 9999-9999");             // 14 Aqui montamos a mascara que queremos

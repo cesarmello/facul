@@ -11,20 +11,20 @@ function listaEnderecos($conexao) {
 	return $enderecos;
 }
 
-function insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_parceiro) {
+function insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_medico) {
 	//$endereco = mysqli_real_escape_string($conexao,$endereco); // TRATA O SQL INJECTION
 	$complemento = mysqli_real_escape_string($conexao,$complemento);
-	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, id_parceiro) 
-						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', (select max(id_parceiro) from tb_parceiro))";
+	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, id_medico) 
+						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', (select max(id_medico) from tb_medico))";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
 
-function insereEnd($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_parceiro) {
+function insereEnd($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_medico) {
 	//$endereco = mysqli_real_escape_string($conexao,$endereco); // TRATA O SQL INJECTION
 	$complemento = mysqli_real_escape_string($conexao,$complemento);
-	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, id_parceiro) 
-						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', {$id_parceiro})";
+	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, id_medico) 
+						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', {$id_medico})";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
@@ -42,9 +42,9 @@ function buscaEndereco($conexao, $id_endereco) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function buscaEndParceiro($conexao, $id_parceiro) {
+function buscaEndMedico($conexao, $id_medico) {
 	$enderecos = array();
-	$resultado = mysqli_query($conexao, "SELECT * FROM tb_endereco WHERE id_parceiro = {$id_parceiro}");
+	$resultado = mysqli_query($conexao, "SELECT * FROM tb_endereco WHERE id_medico = {$id_medico}");
 
 	while($endereco = mysqli_fetch_assoc($resultado)) {
 		array_push($enderecos, $endereco);
@@ -53,12 +53,12 @@ function buscaEndParceiro($conexao, $id_parceiro) {
 }
 
 function removeEndereco($conexao, $id_endereco) {
-	$query = "DELETE FROM tb_endereco WHERE id_endereco = {$id_endereco}";
+	$query = "DELETE FROM tb_endereco WHERE id_endereco = {$id_endereco}paciente-cadastrar.php";
 	return mysqli_query($conexao, $query);
 }
 
-function buscaNumEnd($conexao,$id_parceiro) {
-	$query = "SELECT COUNT(*) as num from tb_endereco WHERE id_parceiro={$id_parceiro}";
+function buscaNumEnd($conexao,$id_medico) {
+	$query = "SELECT COUNT(*) as num from tb_endereco WHERE id_medico={$id_medico}";
 	$result = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($result);
 }

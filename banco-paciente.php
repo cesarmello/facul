@@ -18,19 +18,19 @@ function inserePaciente($conexao, $nome, $cpf, $rg, $cep, $rua, $numero, $comple
 	return $resultadoDaInsercao;
 }
 
-function alteraPaciente($conexao, $id, $nome, $cpf, $rg, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $email, $senha) {
+function alteraPaciente($conexao, $nome, $cpf, $rg, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $email, $senha, $id_paciente) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$query = "UPDATE tb_paciente SET nome='{$nome}' WHERE id_paciente = '{$id}'";
+	$query = "UPDATE tb_paciente SET nome='$nome', cpf=$cpf, rg='$rg', cep=$cep, rua='$rua', numero=$numero, complemento='$complemento', bairro='$bairro', cidade='$cidade', uf='$uf', fixo=$fixo, movel=$movel, email='$email', senha='$senha' WHERE id_paciente=$id_paciente";
 	return mysqli_query($conexao, $query);
 }
 
 function buscaPaciente($conexao, $id) {
-	$query = "SELECT * FROM tb_paciente WHERE id_paciente = {$id}";
+	$query = "SELECT * FROM tb_paciente WHERE id_paciente = $id";
 	$resultado = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($resultado);
 }
 
 function removePaciente($conexao, $id) {
-	$query = "DELETE FROM tb_paciente WHERE id_paciente = {$id}";
+	$query = "DELETE FROM tb_paciente WHERE id_paciente = $id";
 	return mysqli_query($conexao, $query);
 }

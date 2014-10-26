@@ -48,13 +48,13 @@ function buscaEspArea($conexao) {
 	return $especialidades;
 }
 
-function buscaEspCadastrada($conexao, $id_parceiro) {
+function buscaEspCadastrada($conexao, $id_medico) {
 	$especialidades = array();
 	$resultado = mysqli_query($conexao, "SELECT DISTINCT(ESP.especialidade)
 																		   FROM tb_endereco E
 																			 LEFT JOIN mer_endereco_especialidade MESP ON E.id_endereco = MESP.id_endereco
 																			 LEFT JOIN tb_especialidade ESP ON MESP.id_especialidade = ESP.id_especialidade
-																			 WHERE E.id_parceiro=$id_parceiro ORDER BY ESP.especialidade");
+																			 WHERE E.id_medico=$id_medico ORDER BY ESP.especialidade");
 
 	while($especialidade = mysqli_fetch_assoc($resultado)) {
 		array_push($especialidades, $especialidade);

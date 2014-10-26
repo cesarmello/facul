@@ -1,21 +1,20 @@
 <?php
 require_once ('cabecalho.php');
-require_once ('banco-parceiro.php');
+require_once ('banco-medico.php');
 
-$id_parceiro = $_POST["id_parceiro"];
+$id_medico = $_POST["id_medico"];
 $nome  = $_POST["nome"];
 $razao = $_POST["razao"];
 $crm   = $_POST["crm"];
 $senha = $_POST["senha"];
 $site  = $_POST["site"];
 $email = $_POST["email"];
-$id_tipo_parceiro = $_POST["id_tipo_parceiro"];
 
-if(alteraParceiro($conexao, $nome, $razao, $crm, $senha, $site, $email, $id_tipo_parceiro, $id_parceiro)) {
+if(alteraMedico($conexao, $nome, $razao, $crm, $senha, $site, $email, $id_medico)) {
 	$_SESSION["success"] = "$nome alterado com sucesso.";
-	header("Location: parceiro-lista.php");
+	header("Location: medico-lista.php");
 } else {
 	$msg = mysqli_error($conexao);
 	$_SESSION["danger"] = "$nome não foi alterada. $msg";
-	header("Location: parceiro-lista.php");
+	header("Location: medico-lista.php");
 } 

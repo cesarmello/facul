@@ -1,2 +1,2 @@
 <?php
-	$conexao = mysqli_connect('localhost','root','','ausse624_dbguia') or die ("Error " . mysqli_error($conexao)); 
+	$conexao = mysqli_connect('localhost','root','','tcc') or die ("Error " . mysqli_error($conexao)); 

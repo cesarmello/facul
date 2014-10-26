@@ -5,7 +5,7 @@ require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$id_parceiro = $_POST["id_parceiro"];
+$id_medico = $_POST["id_medico"];
 $id_endereco = $_POST["id_endereco"];
 $cep  = $_POST["cep"];
 $rua = $_POST["rua"];
@@ -19,9 +19,9 @@ $telefone = $_POST["telefone"];
 if(alteraEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_endereco)) {
 	/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone
 	$_SESSION["success"] = "Endereco $endereco alterado com sucesso.";
-	header("Location: parceiro-altera-formulario.php?id=$id_parceiro");
+	header("Location: medico-altera-formulario.php?id=$id_medico");
 } else {
 	$msg = mysqli_error($conexao);
 	$_SESSION["danger"] = "Endereco $endereco não foi alterada. $msg";
-	header("Location: parceiro-altera-formulario.php?id=$id_parceiro");
+	header("Location: medico-altera-formulario.php?id=$id_medico");
 } 

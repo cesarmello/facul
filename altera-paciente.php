@@ -1,10 +1,8 @@
 <?php
 require_once ('cabecalho.php');
 require_once ('banco-paciente.php');
-require_once ('logica-usuario.php');
 
-verificaUsuario();
-
+$id_paciente = $_POST["id"];
 $nome   = $_POST["nome"];
 $cpf    = $_POST["cpf"];
 $rg     = $_POST["rg"];
@@ -20,11 +18,11 @@ $movel  = $_POST["movel"];
 $email  = $_POST["email"];
 $senha  = $_POST["senha"];
 
-if(inserePaciente($conexao, $nome, $cpf, $rg, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $email, $senha)) {
-	$_SESSION["success"] = "Paciente adicionado com sucesso.";
-	header("Location: paciente-lista.php");
+if(alteraPaciente($conexao, $nome, $cpf, $rg, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $email, $senha, $id_paciente)) {
+	$_SESSION["success"] = "$nome alterado com sucesso.";
+	header("Location: paciente-altera-formulario.php?id=$id_paciente");
 } else {
 	$msg = mysqli_error($conexao);
-	$_SESSION["danger"] = "Paciente não foi adicionado. $msg";
-	header("Location: paciente-lista.php");
+	$_SESSION["danger"] = "$nome não foi alterado. $msg";
+	header("Location: paciente-altera-formulario.php?id=$id_paciente");
 }

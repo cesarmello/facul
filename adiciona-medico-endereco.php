@@ -13,15 +13,15 @@ $complemento = $_POST["complemento"];
 $bairro = $_POST["bairro"];
 $cidade = $_POST["cidade"];
 $uf = $_POST["uf"];
-$id_parceiro = $_POST["id_parceiro"];
+$id_medico = $_POST["id_medico"];
 $telefone = $_POST["telefone"];
 
-if(insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_parceiro)) {
+if(insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_medico)) {
 	insereTelefone($conexao, $telefone);
 	$_SESSION["success"] = "Endereço adicionado com sucesso.";
-	header("Location: parceiro-lista.php");
+	header("Location: medico-lista.php");
 } else {
 	$msg = mysqli_error($conexao);
 	$_SESSION["danger"] = "Endereço não foi adicionada. $msg";
-	header("Location: parceiro-lista.php");
+	header("Location: medico-lista.php");
 }

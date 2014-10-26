@@ -2,14 +2,14 @@
 require_once ('cabecalho.php');
 require_once ('banco-area.php');
 require_once ('banco-especialidade.php');
-require_once ('banco-parceiro.php');
+require_once ('banco-medico.php');
 require_once ('logica-usuario.php');
 verificaUsuario();
 
-$id_parceiro = $_GET['p'];
+$id_medico = $_GET['p'];
 $id_endereco = $_GET['id'];
 $areas = listaAreas($conexao);
-$parceiro = buscaParceiro($conexao,$id_parceiro);
+$medico = buscaMedico($conexao,$id_medico);
 ?>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -26,8 +26,8 @@ $parceiro = buscaParceiro($conexao,$id_parceiro);
 			<tr>
 				<td><?=$espCad['especialidade'];?></td>
 				<td>
-					<form action="remove-parceiro-end-esp.php" method="post">
-						<input type="hidden" name="id_par" value="<?=$id_parceiro?>">
+					<form action="remove-medico-end-esp.php" method="post">
+						<input type="hidden" name="id_par" value="<?=$id_medico?>">
 						<input type="hidden" name="id_end" value="<?=$id_endereco?>">
 						<input type="hidden" name="id_esp" value="<?=$espCad['id_especialidade']?>">
 						<button class="btn btn-danger btn-sm">Remover</button>
@@ -37,8 +37,8 @@ $parceiro = buscaParceiro($conexao,$id_parceiro);
 			<?php endforeach;?>
 		</table>
 		<table class="table">
-		<form action="adiciona-especialidade-parceiro.php" method="post">
-			<input type="hidden" name="id_parceiro" value="<?=$id_parceiro?>">
+		<form action="adiciona-especialidade-medico.php" method="post">
+			<input type="hidden" name="id_medico" value="<?=$id_medico?>">
 			<input type="hidden" name="id_endereco" value="<?=$id_endereco?>">
 			<tr>
 				<td colspan="2" class="text-center"><h1>Adicionar Especialidade</h1></td>
@@ -64,7 +64,7 @@ $parceiro = buscaParceiro($conexao,$id_parceiro);
 			</tr>
 			<tr>
 				<td colspan="2">
-					<a href="parceiro-altera-formulario.php?id=<?=$id_parceiro?>" class="btn btn-danger" title="Voltar a pagina anterior">Voltar</a>
+					<a href="medico-altera-formulario.php?id=<?=$id_medico?>" class="btn btn-danger" title="Voltar a pagina anterior">Voltar</a>
 					<input type="submit" value="Cadastrar" class="btn btn-primary" title="Cadastrar nova especialidade"/>
 				</td>
 			</tr>

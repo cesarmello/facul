@@ -2,7 +2,7 @@
 require_once ('cabecalho.php');
 require_once ('banco-especialidade.php');
 require_once ('banco-endereco.php');
-require_once ('banco-parceiro.php');
+require_once ('banco-medico.php');
 require_once ('logica-usuario.php');
 
 verificaUsuario();
@@ -17,7 +17,7 @@ verificaUsuario();
 			<td></td>
 			<td></td>
 			<td></td>
-			<td class="text-center"><a class="btn btn-primary" href="parceiro-formulario.php">Adicionar</a></td>
+			<td class="text-center"><a class="btn btn-primary" href="medico-formulario.php">Adicionar</a></td>
 		</tr>
 
 		<tr>
@@ -29,29 +29,29 @@ verificaUsuario();
 		</tr>
 
 		<?php
-			$parceiros = listaParceiros($conexao);
+			$medicos = listaMedicos($conexao);
 
-			foreach ($parceiros as $parceiro) :
-			$id_parceiro = 	$parceiro['id_parceiro'];
+			foreach ($medicos as $medico) :
+			$id_medico = 	$medico['id_medico'];
 			
-			$endereco = buscaNumEnd($conexao,$id_parceiro);
+			$endereco = buscaNumEnd($conexao,$id_medico);
 		?>
 		<tr>
-			<td><?=$parceiro['nome']?></td>
+			<td><?=$medico['nome']?></td>
 			<td><?php echo $endereco['num']?></td>
 
 			<td><?php
-				$id_parceiro = $parceiro['id_parceiro'];
-				$espCadastradas = buscaespCadastrada($conexao,$id_parceiro);
+				$id_medico = $medico['id_medico'];
+				$espCadastradas = buscaespCadastrada($conexao,$id_medico);
 				foreach ($espCadastradas as $espCadastrada) :
 					echo " | ".$espCadastrada['especialidade'];
 				endforeach;?>
 			</td>
 			
-			<td class="text-center"><a class="btn btn-primary btn-sm" href="parceiro-altera-formulario.php?id=<?=$parceiro['id_parceiro']?>">Alterar</a></td>
+			<td class="text-center"><a class="btn btn-primary btn-sm" href="medico-altera-formulario.php?id=<?=$medico['id_medico']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-parceiro.php" method="post">
-					<input type="hidden" name="id" value="<?=$parceiro['id_parceiro']?>">
+				<form action="remove-medico.php" method="post">
+					<input type="hidden" name="id" value="<?=$medico['id_medico']?>">
 					<button class="btn btn-danger btn-sm">Remover</button>
 				</form>
 			</td>
