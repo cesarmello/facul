@@ -5,7 +5,7 @@ require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$unidade = $_POST["unidade"];
+$unidade   = $_POST["unidade"];
 $descricao = $_POST["descricao"];
 
 

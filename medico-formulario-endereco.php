@@ -1,14 +1,9 @@
 <?php
 require_once ('cabecalho.php');
 require_once ('banco-endereco.php');
-require_once ('banco-telefone.php');
 require_once ('logica-usuario.php');
-
 verificaUsuario();
-
-$telefone = array("telefone" => "");
-
-$endereco = array("cep" => "", "rua" => "", "numero" => "", "complemento" => "", "bairro" => "", "cidade" => "", "uf" => "");
+$endereco = array("cep" => "", "rua" => "", "numero" => "", "complemento" => "", "bairro" => "", "cidade" => "", "uf" => "", "fixo" => "", "movel" => "");
 ?>
 <h1>Adicionando Endereço</h1>
 <form action="adiciona-medico-endereco.php" method="post">

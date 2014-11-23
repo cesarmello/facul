@@ -2,7 +2,6 @@
 require_once ('cabecalho.php');
 require_once ('banco-unimedida.php');
 require_once ('logica-usuario.php');
-
 verificaUsuario();
 ?>
 	
@@ -21,7 +20,7 @@ verificaUsuario();
 			<td class="text-bold">Nome</td>
 			<td class="text-bold">Descrição</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 
 		<?php
@@ -33,9 +32,9 @@ verificaUsuario();
 			<td><?=$unimedida['descricao'] ?></td>
 			<td class="text-center"><a class="btn btn-primary btn-sm" href="unimedida-altera-formulario.php?id=<?=$unimedida['id_unimedida']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-unimedida.php" method="post">
+				<form action="desativa-unimedida.php" method="post">
 					<input type="hidden" name="id" value="<?=$unimedida['id_unimedida']?>">
-					<button class="btn btn-danger btn-sm">Remover</button>
+					<button class="btn btn-danger btn-sm">Desativar</button>
 				</form>
 			</td>
 		</tr>

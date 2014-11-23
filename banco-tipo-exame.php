@@ -11,22 +11,17 @@ function listaTipoExames($conexao) {
 	return $tipo_exames;
 }
 
-function insereTipoExame($conexao, $nome, $minimo, $normal, $maximo, $id_unimedida) {
+function insereTipoExame($conexao, $nome, $valor1, $desc1, $valor2, $desc2, $valor3, $desc3, $valor4, $desc4, $valor5, $desc5, $auto_exame, $id_unimedida) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$minimo = mysqli_real_escape_string($conexao,$minimo);
-	$normal = mysqli_real_escape_string($conexao,$normal);
-	$maximo = mysqli_real_escape_string($conexao,$maximo);
-	$query = "INSERT INTO tb_tipo_exame (nome, minimo, normal, maximo, id_unimedida) VALUES ('$nome', '$minimo', '$normal', '$maximo', $id_unimedida)";
+	$query = "INSERT INTO tb_tipo_exame (nome, valor1, desc1, valor2, desc2, valor3, desc3, valor4, desc4, valor5, desc5, auto_exame, id_unimedida)
+						VALUES ('$nome', $valor1, '$desc1', $valor2, '$desc2', $valor3, '$desc3', $valor4, '$desc4', $valor5, '$desc5', '$auto_exame', $id_unimedida)";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
 
-function alteraTipoExame($conexao, $id, $nome, $minimo, $normal, $maximo, $id_unimedida) {
+function alteraTipoExame($conexao, $id, $nome, $valor1, $desc1, $valor2, $desc2, $valor3, $desc3, $valor4, $desc4, $valor5, $desc5, $auto_exame, $id_unimedida) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$minimo = mysqli_real_escape_string($conexao,$minimo);
-	$normal = mysqli_real_escape_string($conexao,$normal);
-	$maximo = mysqli_real_escape_string($conexao,$maximo);
-	$query = "UPDATE tb_tipo_exame SET nome='$nome', minimo='$minimo', normal='$normal', maximo='$maximo', id_unimedida=$id_unimedida WHERE id_tipo_exame = $id";
+	$query = "UPDATE tb_tipo_exame SET nome='$nome', valor1='$valor1', desc1='$desc1', valor2='$valor2', desc2='$desc2', valor3='$valor3', desc3='$desc3', valor4='$valor4', desc4='$desc4', valor5='$valor5', desc5='$desc5', auto_exame='$auto_exame', id_unimedida=$id_unimedida WHERE id_tipo_exame=$id";
 	return mysqli_query($conexao, $query);
 }
 
@@ -36,7 +31,7 @@ function buscaTipoExame($conexao, $id) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function removeTipoExame($conexao, $id) {
+function desativaTipoExame($conexao, $id) {
 	$query = "DELETE FROM tb_tipo_exame WHERE id_tipo_exame = $id";
 	return mysqli_query($conexao, $query);
 }

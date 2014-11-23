@@ -1,7 +1,6 @@
 <?php
 require_once ('cabecalho.php');
 require_once ('banco-endereco.php');
-require_once ('banco-telefone.php');
 require_once ('logica-usuario.php');
 
 verificaUsuario();
@@ -13,11 +12,11 @@ $complemento = $_POST["complemento"];
 $bairro = $_POST["bairro"];
 $cidade = $_POST["cidade"];
 $uf = $_POST["uf"];
+$fixo = $_POST["fixo"];
+$movel = $_POST["movel"];
 $id_medico = $_POST["id_medico"];
-$telefone = $_POST["telefone"];
 
-if(insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_medico)) {
-	insereTelefone($conexao, $telefone);
+if(insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $id_medico)) {
 	$_SESSION["success"] = "Endereço adicionado com sucesso.";
 	header("Location: medico-lista.php");
 } else {

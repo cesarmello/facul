@@ -31,7 +31,7 @@ function buscaMedico($conexao, $id_medico) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function removeMedico($conexao, $id_medico) {
+function desativaMedico($conexao, $id_medico) {
 	$query = "DELETE FROM tb_medico WHERE id_medico = {$id_medico}";
 	return mysqli_query($conexao, $query);
 }

@@ -32,7 +32,7 @@ function buscaUniMedida($conexao, $id) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function removeUniMedida($conexao, $id) {
+function desativaUniMedida($conexao, $id) {
 	$query = "DELETE FROM tb_unimedida WHERE id_unimedida = {$id}";
 	return mysqli_query($conexao, $query);
 }

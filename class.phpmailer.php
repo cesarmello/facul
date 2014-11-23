@@ -2416,7 +2416,7 @@ class PHPMailer
     }
 
     /**
-     * Backward compatibility wrapper for an old QP encoding function that was removed.
+     * Backward compatibility wrapper for an old QP encoding function that was desativad.
      * @see PHPMailer::encodeQP()
      * @access public
      * @param string $string
@@ -3215,7 +3215,7 @@ class PHPMailer
             list($heading, $value) = explode(':', $line, 2);
             $heading = strtolower($heading);
             $value = preg_replace('/\s+/', ' ', $value); // Compress useless spaces
-            $lines[$key] = $heading . ':' . trim($value); // Don't forget to remove WSP around the value
+            $lines[$key] = $heading . ':' . trim($value); // Don't forget to desativa WSP around the value
         }
         $signHeader = implode("\r\n", $lines);
         return $signHeader;

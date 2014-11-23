@@ -1,19 +1,54 @@
 		<tr>
-			<td>Nome</td>
+			<td>Nome do Exame</td>
 			<td><input type="text" name="nome" value="<?=$tipo_exame['nome']?>" class="form-control"/></td>
 		</tr>
+
 		<tr>
-			<td>Mínimo</td>
-			<td><input type="text" name="minimo" value="<?=$tipo_exame['minimo']?>" class="form-control"/></td>
+			<td>Valor de referência 1</td>
+			<td><input type="text" name="valor1" value="<?=$tipo_exame['valor1']?>" class="form-control"/></td>
 		</tr>
 		<tr>
-			<td>Normal</td>
-			<td><input type="text" name="normal" value="<?=$tipo_exame['normal']?>" class="form-control"/></td>
+			<td>Titulo do campo valor 1</td>
+			<td><input type="text" name="desc1" value="<?=$tipo_exame['desc1']?>" class="form-control"/></td>
+		</tr>
+
+		<tr>
+			<td>Valor de referência 2</td>
+			<td><input type="text" name="valor2" value="<?=$tipo_exame['valor2']?>" class="form-control"/></td>
 		</tr>
 		<tr>
-			<td>Máximo</td>
-			<td><input type="text" name="maximo" value="<?=$tipo_exame['maximo']?>" class="form-control"/></td>
+			<td>Titulo do campo valor 2</td>
+			<td><input type="text" name="desc2" value="<?=$tipo_exame['desc2']?>" class="form-control"/></td>
 		</tr>
+
+		<tr>
+			<td>Valor de referência 3</td>
+			<td><input type="text" name="valor3" value="<?=$tipo_exame['valor3']?>" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td>Titulo do campo valor 3</td>
+			<td><input type="text" name="desc3" value="<?=$tipo_exame['desc3']?>" class="form-control"/></td>
+		</tr>
+
+		<tr>
+			<td>Valor de referência 4</td>
+			<td><input type="text" name="valor4" value="<?=$tipo_exame['valor4']?>" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td>Titulo do campo valor 4</td>
+			<td><input type="text" name="desc4" value="<?=$tipo_exame['desc4']?>" class="form-control"/></td>
+		</tr>
+
+		<tr>
+			<td>Valor de referência 5</td>
+			<td><input type="text" name="valor5" value="<?=$tipo_exame['valor5']?>" class="form-control"/></td>
+		</tr>
+		<tr>
+			<td>Titulo do campo valor 5</td>
+			<td><input type="text" name="desc5" value="<?=$tipo_exame['desc5']?>" class="form-control"/></td>
+		</tr>
+
+
 		<tr>
 			<td>Unidade de Medida</td>
 			<td>

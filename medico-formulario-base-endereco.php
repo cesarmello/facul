@@ -26,9 +26,11 @@
 			<td>UF</td>
 			<td><input type="text" id="uf" name="uf" value="<?=$endereco['uf']?>" class="form-control" readonly/></td>
 		</tr>
-		<?php foreach ($telefone as $tel) : ?>
 		<tr>
 			<td>Telefone</td>
-			<td><input type="text" name="telefone" id="telefone" value="<?=$tel['telefone']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="11"/></td>
+			<td><input type="text" name="fixo" id="fixo" value="<?=$endereco['fixo']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="10"/></td>
 		</tr>
-		<?php endforeach ?>
+		<tr>
+			<td>Celular</td>
+			<td><input type="text" name="movel" id="movel" value="<?=$endereco['movel']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="11"/></td>
+		</tr>

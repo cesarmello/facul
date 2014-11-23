@@ -4,7 +4,7 @@ require_once ('banco-tipo-exame.php');
 require_once ('logica-usuario.php');
 
 $id= $_POST['id'];
-removeTipoExame($conexao, $id);
-$_SESSION["success"] = "Tipo de Exame removida com sucesso.";
+desativaTipoExame($conexao, $id);
+$_SESSION["success"] = "Tipo de Exame Desativada com sucesso.";
 header("Location: tipo-exame-lista.php");
 die();

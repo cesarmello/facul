@@ -19,7 +19,7 @@ verificaUsuario();
 		<tr>
 			<td class="text-bold">Nome</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 		<?php
 			$pac = listaPacientes($conexao);
@@ -29,9 +29,9 @@ verificaUsuario();
 			<td><?=$paciente['nome'] ?></td>
 			<td class="text-center"><a class="btn btn-primary btn-sm" href="paciente-altera-formulario.php?id=<?=$paciente['id_paciente']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-paciente.php" method="post">
+				<form action="desativa-paciente.php" method="post">
 					<input type="hidden" name="id" value="<?=$paciente['id_paciente']?>">
-					<button class="btn btn-danger btn-sm">Remover</button>
+					<button class="btn btn-danger btn-sm">Desativar</button>
 				</form>
 			</td>
 		</tr>

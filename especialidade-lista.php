@@ -20,7 +20,7 @@ verificaUsuario();
 			<td class="text-bold">Especialidade</td>
 			<td class="text-bold">Área</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 
 			<?php
@@ -33,9 +33,9 @@ verificaUsuario();
 				<td><?=$especialidade['nomeesp'] ?></td>
 				<td><a class="btn btn-primary btn-sm" href="especialidade-altera-formulario.php?id=<?=$especialidade['id_especialidade']?>">Alterar</a></td>
 				<td class="text-center">
-					<form action="remove-especialidade.php" method="post">
+					<form action="desativa-especialidade.php" method="post">
 						<input type="hidden" name="id" value="<?=$especialidade['id_especialidade']?>">
-						<button class="btn btn-danger btn-sm">Remover</button>
+						<button class="btn btn-danger btn-sm">Desativar</button>
 					</form>
 				</td>
 			</tr>

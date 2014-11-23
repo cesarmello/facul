@@ -25,7 +25,7 @@ verificaUsuario();
 			<td class="text-bold">End</td>
 			<td class="text-bold">Especialidade</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 
 		<?php
@@ -50,9 +50,9 @@ verificaUsuario();
 			
 			<td class="text-center"><a class="btn btn-primary btn-sm" href="medico-altera-formulario.php?id=<?=$medico['id_medico']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-medico.php" method="post">
+				<form action="desativa-medico.php" method="post">
 					<input type="hidden" name="id" value="<?=$medico['id_medico']?>">
-					<button class="btn btn-danger btn-sm">Remover</button>
+					<button class="btn btn-danger btn-sm">Desativar</button>
 				</form>
 			</td>
 		</tr>

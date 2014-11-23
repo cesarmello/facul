@@ -25,7 +25,7 @@ verificaUsuario();
 			<td class="text-bold">Normal</td>
 			<td class="text-bold">Maximo</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 
 		<?php
@@ -39,9 +39,9 @@ verificaUsuario();
 			<td><?=$tipo_exame['maximo'] ?></td>
 			<td class="text-center"><a class="btn btn-primary btn-sm" href="tipo-exame-altera-formulario.php?id=<?=$tipo_exame['id_tipo_exame']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-tipo-exame.php" method="post">
+				<form action="desativa-tipo-exame.php" method="post">
 					<input type="hidden" name="id" value="<?=$tipo_exame['id_tipo_exame']?>">
-					<button class="btn btn-danger btn-sm">Remover</button>
+					<button class="btn btn-danger btn-sm">Desativar</button>
 				</form>
 			</td>
 		</tr>

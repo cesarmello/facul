@@ -1,7 +1,6 @@
 <?php
 require_once ('cabecalho.php');
 require_once ('banco-endereco.php');
-require_once ('banco-telefone.php');
 require_once ('logica-usuario.php');
 
 verificaUsuario();
@@ -9,7 +8,6 @@ verificaUsuario();
 $id_endereco = $_GET['id'];
 $id_medico = $_GET['p'];
 $endereco = buscaEndereco($conexao, $id_endereco);
-$telefone = buscaTelefone($conexao, $id_endereco);
 
 ?>
 

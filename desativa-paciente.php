@@ -4,7 +4,7 @@ require_once ('banco-paciente.php');
 require_once ('logica-usuario.php');
 
 $id= $_POST['id'];
-removePaciente($conexao, $id);
-$_SESSION["success"] = "Paciente removido com sucesso.";
+desativaPaciente($conexao, $id);
+$_SESSION["success"] = "Paciente desativado com sucesso.";
 header("Location: paciente-lista.php");
 die();

@@ -40,7 +40,7 @@ $ends = buscaEndMedico($conexao, $id_medico);
 			<td style="width:55%;" class="text-bold">Especialidades</td>
 			<td style="width:05%;" class="text-bold text-center">+</td>
 			<td style="width:05%;" class="text-bold text-center">Alterar</td>
-			<td style="width:05%;" class="text-bold text-center">Excluir</td>
+			<td style="width:05%;" class="text-bold text-center">Desativar</td>
 		</tr>
 		<?php
 		foreach ($ends as $end) :?>
@@ -58,10 +58,10 @@ $ends = buscaEndMedico($conexao, $id_medico);
 				</td>
 				<td class="text-center"><a class="btn btn-primary btn-sm" href="endereco-altera-formulario.php?id=<?=$end['id_endereco']?>&p=<?=$id_medico?>" alt="Alterar Enderço" data-toggle="tooltip" data-placement="top" title="Alterar Endereço">Alterar</a></td>
 				<td class="text-center">
-					<form action="remove-endereco.php" method="post">
+					<form action="desativa-endereco.php" method="post">
 						<input type="hidden" name="id_endereco" value="<?=$end['id_endereco']?>">
 						<input type="hidden" name="id_medico" value="<?=$id_medico?>">
-						<button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Excluir Enderço">Remover</button>
+						<button class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Desativar Enderço">Desativar</button>
 					</form>
 				</td>
 			</tr>

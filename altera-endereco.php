@@ -14,10 +14,10 @@ $complemento = $_POST["complemento"];
 $bairro = $_POST["bairro"];
 $cidade = $_POST["cidade"];
 $uf = $_POST["uf"];
-$telefone = $_POST["telefone"];
+$fixo = $_POST["fixo"];
+$movel = $_POST["movel"];
 
-if(alteraEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_endereco)) {
-	/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone/// Telefone
+if(alteraEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $id_endereco)) {
 	$_SESSION["success"] = "Endereco $endereco alterado com sucesso.";
 	header("Location: medico-altera-formulario.php?id=$id_medico");
 } else {

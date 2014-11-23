@@ -19,7 +19,7 @@ verificaUsuario();
 		<tr>
 			<td class="text-bold">Nome</td>
 			<td class="text-bold text-center">Alterar</td>
-			<td class="text-bold text-center">Excluir</td>
+			<td class="text-bold text-center">Desativar</td>
 		</tr>
 
 		<?php
@@ -30,9 +30,9 @@ verificaUsuario();
 			<td><?=$area['nome'] ?></td>
 			<td class="text-center"><a class="btn btn-primary btn-sm" href="area-altera-formulario.php?id=<?=$area['id_area']?>">Alterar</a></td>
 			<td class="text-center">
-				<form action="remove-area.php" method="post">
+				<form action="desativa-area.php" method="post">
 					<input type="hidden" name="id" value="<?=$area['id_area']?>">
-					<button class="btn btn-danger btn-sm">Remover</button>
+					<button class="btn btn-danger btn-sm">Desativar</button>
 				</form>
 			</td>
 		</tr>

@@ -4,7 +4,7 @@ require_once ('banco-area.php');
 require_once ('logica-usuario.php');
 
 $id= $_POST['id'];
-removeArea($conexao, $id);
-$_SESSION["success"] = "Área removida com sucesso.";
+desativaArea($conexao, $id);
+$_SESSION["success"] = "Área Desativada com sucesso.";
 header("Location: area-lista.php");
 die();

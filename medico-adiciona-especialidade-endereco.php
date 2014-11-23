@@ -26,11 +26,11 @@ $medico = buscaMedico($conexao,$id_medico);
 			<tr>
 				<td><?=$espCad['especialidade'];?></td>
 				<td>
-					<form action="remove-medico-end-esp.php" method="post">
+					<form action="desativa-medico-end-esp.php" method="post">
 						<input type="hidden" name="id_par" value="<?=$id_medico?>">
 						<input type="hidden" name="id_end" value="<?=$id_endereco?>">
 						<input type="hidden" name="id_esp" value="<?=$espCad['id_especialidade']?>">
-						<button class="btn btn-danger btn-sm">Remover</button>
+						<button class="btn btn-danger btn-sm">Desativar</button>
 					</form>
 				</td>
 			</tr>

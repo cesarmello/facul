@@ -4,11 +4,11 @@
 		</tr>
 		<tr>
 			<td>CPF</td>
-			<td><input type="text" id="cpf" name="cpf" value="<?=$paciente['cpf']?>" class="form-control"/></td>
+			<td><input type="text" id="cpf" name="cpf" value="<?=$paciente['cpf']?>" class="form-control" maxlength="11"/></td>
 		</tr>
 		<tr>
 			<td>RG</td>
-			<td><input type="text" id="rg" name="rg" value="<?=$paciente['rg']?>" class="form-control"/></td>
+			<td><input type="text" id="rg" name="rg" value="<?=$paciente['rg']?>" class="form-control" maxlength="15"/></td>
 		</tr>
 		<tr>
 			<td>CEP</td>
@@ -40,11 +40,11 @@
 		</tr>
 		<tr>
 			<td>Telefone Fixo</td>
-			<td><input type="text" id="fixo" name="fixo" value="<?=$paciente['fixo']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="11"/></td>
+			<td><input type="text" id="fixo" name="fixo" value="<?=$paciente['fixo']?>" class="form-control" onkeypress="mascara(this, mnum);" maxlength="10"/></td>
 		</tr>
 		<tr>
 			<td>Telefone Movel</td>
-			<td><input type="text" id="movel" name="movel" value="<?=$paciente['movel']?>" class="form-control" onkeypress="mascara(this, mnum);"  maxlength="10"/></td>
+			<td><input type="text" id="movel" name="movel" value="<?=$paciente['movel']?>" class="form-control" onkeypress="mascara(this, mnum);" maxlength="11"/></td>
 		</tr>
 		<tr>
 			<td>E-mail</td>

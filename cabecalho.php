@@ -12,6 +12,7 @@ require_once ('mostra-alerta.php');
 	<script src="js/bootstrap.js"></script>
 	<script src="js/docs.min.js"></script>
 	<script src="js/masc.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 
 <body>
@@ -39,7 +40,16 @@ require_once ('mostra-alerta.php');
 							<ul class="dropdown-menu">
 								<li><a href="unimedida-lista.php">Unidade de Medidas</a></li>
 								<li><a href="tipo-exame-lista.php">Tipos de Exames</a></li>
-								<li><a href="#">Submenu 1-3</a></li>
+								<li><a href="exame-lista.php">Exame</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Nova consulta</a></li>
+								<li><a href="#">Exibir Consultas</a></li>
+								<li><a href="#">Outro</a></li>
 							</ul>
 						</li>
 						<li><a href="logout.php">Sair</a></li>

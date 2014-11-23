@@ -4,7 +4,7 @@ require_once ('banco-unimedida.php');
 require_once ('logica-usuario.php');
 
 $id= $_POST['id'];
-removeUniMedida($conexao, $id);
-$_SESSION["success"] = "Unidade de Medida removida com sucesso.";
+desativaUniMedida($conexao, $id);
+$_SESSION["success"] = "Unidade de Medida Desativada com sucesso.";
 header("Location: unimedida-lista.php");
 die();

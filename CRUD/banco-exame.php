@@ -13,10 +13,8 @@ function listaTipoExames($conexao) {
 
 function insereTipoExame($conexao, $nome, $minimo, $normal, $maximo) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$minimo = mysqli_real_escape_string($conexao,$minimo);
-	$normal = mysqli_real_escape_string($conexao,$normal);
-	$maximo = mysqli_real_escape_string($conexao,$maximo);
-	$query = "INSERT INTO tb_tipo_exame (nome, minimo, normal, maximo) VALUES ('{$nome}', '{$minimo}', '{$normal}', '{$maximo}')";
+	$query = "INSERT INTO tb_medico (nome, razao, crm, senha, site, email, data_registro, permissao) 
+						VALUES ('$nome', '$razao', '$crm', '$senha', '$site', '$email', NOW(), 'm')";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
@@ -36,7 +34,7 @@ function buscaTipoExame($conexao, $id) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function removeTipoExame($conexao, $id) {
+function desativaTipoExame($conexao, $id) {
 	$query = "DELETE FROM tb_tipo_exame WHERE id_tipo_exame = {$id}";
 	return mysqli_query($conexao, $query);
 }
