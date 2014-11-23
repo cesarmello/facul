@@ -3,7 +3,7 @@ require_once ('conecta.php');
 
 function listaAreas($conexao) {
 	$areas = array();
-	$resultado = mysqli_query($conexao, "SELECT * from tb_area where ativo !='0' ORDER BY nome");
+	$resultado = mysqli_query($conexao, "SELECT * from tb_area where ativo ='1' ORDER BY nome");
 
 	while($area = mysqli_fetch_assoc($resultado)) {
 		array_push($areas, $area);
@@ -26,7 +26,7 @@ function alteraArea($conexao, $id, $nome) {
 }
 
 function buscaArea($conexao, $id) {
-	$query = "SELECT * FROM tb_area WHERE id_area = {$id} where ativo !='0'";
+	$query = "SELECT * FROM tb_area WHERE id_area = {$id} where ativo ='1'";
 	$resultado = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($resultado);
 }

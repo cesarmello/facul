@@ -3,7 +3,7 @@ require_once ('conecta.php');
 
 function listaEnderecos($conexao) {
 	$enderecos = array();
-	$resultado = mysqli_query($conexao, "SELECT * from tb_endereco where ativo !='0' ORDER BY endereco");
+	$resultado = mysqli_query($conexao, "SELECT * from tb_endereco where ativo ='1' ORDER BY endereco");
 
 	while($endereco = mysqli_fetch_assoc($resultado)) {
 		array_push($enderecos, $endereco);
@@ -35,14 +35,14 @@ function alteraEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $c
 }
 
 function buscaEndereco($conexao, $id_endereco) {
-	$query = "SELECT * FROM tb_endereco WHERE id_endereco = {$id_endereco} and ativo !='0'";
+	$query = "SELECT * FROM tb_endereco WHERE id_endereco = {$id_endereco} and ativo ='1'";
 	$resultado = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($resultado);
 }
 
 function buscaEndMedico($conexao, $id_medico) {
 	$enderecos = array();
-	$resultado = mysqli_query($conexao, "SELECT * FROM tb_endereco WHERE id_medico = {$id_medico} and ativo !='0'");
+	$resultado = mysqli_query($conexao, "SELECT * FROM tb_endereco WHERE id_medico = {$id_medico} and ativo ='1'");
 
 	while($endereco = mysqli_fetch_assoc($resultado)) {
 		array_push($enderecos, $endereco);
@@ -56,7 +56,7 @@ function desativaEndereco($conexao, $id_endereco) {
 }
 
 function buscaNumEnd($conexao,$id_medico) {
-	$query = "SELECT COUNT(*) as num from tb_endereco WHERE id_medico = {$id_medico} and ativo !='0'";
+	$query = "SELECT COUNT(*) as num from tb_endereco WHERE id_medico = {$id_medico} and ativo ='1'";
 	$result = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($result);
 }

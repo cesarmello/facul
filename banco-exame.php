@@ -9,7 +9,7 @@ function listaExames($conexao) {
 																			LEFT JOIN tb_prontuario P ON P.id_prontuario = PE.id_prontuario
 																			LEFT JOIN tb_exame_campos C ON C.id_exame = E.id_exame
 																			LEFT JOIN tb_paciente PA ON PA.id_paciente = E.qm_fez
-																			WHERE E.ativo !='0'");
+																			WHERE E.ativo ='1'");
 
 	while($exame = mysqli_fetch_assoc($resultado)) {
 		array_push($exames, $exame);
