@@ -51,7 +51,7 @@ function buscaEndMedico($conexao, $id_medico) {
 }
 
 function desativaEndereco($conexao, $id_endereco) {
-	$query = "UPDATE tb_endereco SET ativo = '1' WHERE id_endereco = {$id_endereco}";
+	$query = "UPDATE tb_endereco SET ativo = '0' WHERE id_endereco = {$id_endereco}";
 	return mysqli_query($conexao, $query);
 }
 

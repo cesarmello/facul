@@ -7,7 +7,7 @@ $unidade   = $_POST["unidade"];
 $descricao = $_POST["descricao"];
 
 if(alteraUniMedida($conexao, $id, $unidade, $descricao)) {
-	$_SESSION["success"] = "Unidade de Medida $unidade alretado com sucesso.";
+	$_SESSION["success"] = "Unidade de Medida $unidade alterado com sucesso.";
 	header("Location: unimedida-lista.php");
 } else {
 	$msg = mysqli_error($conexao);

@@ -30,7 +30,7 @@ function buscaEspecialidade($conexao, $id_especialidade) {
 	return mysqli_fetch_assoc($resultado);
 }
 
-function desativaEspecialidade($conexao, $id_especialidade) {
+function desativaEspecialidade($conexao, $id_especialidade, $id_endereco) {
 	$query = "UPDATE tb_especialidade SET ativo ='0' WHERE id_especialidade = {$id_especialidade}";
 	return mysqli_query($conexao, $query);
 }
@@ -69,7 +69,7 @@ function buscaEspCadastradaEnd($conexao, $id_endereco) {
 																		   FROM tb_endereco E
 																			 LEFT JOIN mer_endereco_especialidade MESP ON E.id_endereco = MESP.id_endereco
 																			 LEFT JOIN tb_especialidade ESP ON MESP.id_especialidade = ESP.id_especialidade
-																			 WHERE E.id_endereco = $id_endereco AND E.ativo ='1'ORDER BY ESP.especialidade");
+																			 WHERE E.id_endereco = $id_endereco AND MESP.ativo ='1' ORDER BY ESP.especialidade");
 
 	while($especialidade = mysqli_fetch_assoc($resultado)) {
 		array_push($especialidades, $especialidade);
@@ -78,7 +78,12 @@ function buscaEspCadastradaEnd($conexao, $id_endereco) {
 }
 
 function insereEspEnd($conexao, $id_endereco, $id_especialidade) {
-	$query = "INSERT INTO mer_endereco_especialidade (id_endereco, ativo, id_especialidade) VALUES ( $id_endereco, '1', $id_especialidade)";
+	$query = "INSERT INTO mer_endereco_especialidade (id_endereco, id_especialidade, ativo) VALUES ( $id_endereco, $id_especialidade, '1')";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
+}
+
+function desativaEspEnd($conexao, $id_endereco, $id_especialidade, $id_endereco) {
+	$query = "UPDATE mer_endereco_especialidade SET ativo ='0' WHERE id_especialidade = {$id_especialidade} AND id_endereco = {$id_endereco}";
+	return mysqli_query($conexao, $query);
 }

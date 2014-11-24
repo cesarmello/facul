@@ -5,8 +5,8 @@ require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$id_medico = $_POST["id_medico"];
-$id_endereco = $_POST["id_endereco"];
+$id_medico        = $_POST["id_medico"];
+$id_endereco      = $_POST["id_endereco"];
 $id_especialidade = $_POST["especialidades"];
 
 if(insereEspEnd($conexao, $id_endereco, $id_especialidade)) {

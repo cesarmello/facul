@@ -3,7 +3,7 @@ require_once ('conecta.php');
 
 function listaMedicos($conexao) {
 	$medicos = array();
-	$resultado = mysqli_query($conexao, "SELECT * from tb_medico ORDER BY nome");
+	$resultado = mysqli_query($conexao, "SELECT * from tb_medico WHERE ativo = '1' ORDER BY nome");
 
 	while($medico = mysqli_fetch_assoc($resultado)) {
 		array_push($medicos, $medico);
@@ -32,6 +32,6 @@ function buscaMedico($conexao, $id_medico) {
 }
 
 function desativaMedico($conexao, $id_medico) {
-	$query = "DELETE FROM tb_medico WHERE id_medico = {$id_medico}";
+	$query = "UPDATE tb_medico SET  ativo = '0' WHERE id_medico = {$id_medico}";
 	return mysqli_query($conexao, $query);
 }

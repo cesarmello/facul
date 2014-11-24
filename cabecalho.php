@@ -12,7 +12,8 @@ require_once ('mostra-alerta.php');
 	<script src="js/bootstrap.js"></script>
 	<script src="js/docs.min.js"></script>
 	<script src="js/masc.js"></script>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="js/bootstrap-modal.js"></script>
+	<script src="js/jsapi.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,6 @@ require_once ('mostra-alerta.php');
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Exames
 							<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="unimedida-lista.php">Unidade de Medidas</a></li>
 								<li><a href="tipo-exame-lista.php">Tipos de Exames</a></li>
 								<li><a href="exame-lista.php">Exame</a></li>
 							</ul>

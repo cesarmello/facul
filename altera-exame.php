@@ -9,7 +9,7 @@ $valor_exame   = $_POST["valor_exame"];
 $id_tipo_exame = $_POST["id_tipo_exame"];
 
 if(alteraExame($conexao, $id, $valor_exame, $diagnostico, $qm_exame, $id_tipo_exame)) {
-	$_SESSION["success"] = "Exame $id alretado com sucesso.";
+	$_SESSION["success"] = "Exame $id alterado com sucesso.";
 	header("Location: exame-lista.php");
 } else {
 	$msg = mysqli_error($conexao);

@@ -7,19 +7,8 @@ require_once ('logica-usuario.php');
 verificaUsuario();
 
 $tipo_exame = array("nome" => "", "minimo" => "", "normal" => "", "maximo" => "");
-$unimedidas  = listaUniMedidas($conexao);
-?>
-<h1>Adicionando Tipo de Exame</h1>
-<form action="adiciona-tipo-exame.php" method="post">
-	<table class="table">
-	
-		<?php require_once ('tipo-exame-formulario-base.php');?>
+$unimedidas  = listaUniMedidas($conexao); ?>
 
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="Cadastrar" class="btn btn-primary" /></td>
-		</tr>
+	<?php require_once ('tipo-exame-formulario-base.php');?>
 
-	</table>
-</form>
 <?php require_once ('rodape.php'); ?>

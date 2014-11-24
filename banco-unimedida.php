@@ -33,6 +33,6 @@ function buscaUniMedida($conexao, $id) {
 }
 
 function desativaUniMedida($conexao, $id) {
-	$query = "DELETE FROM tb_unimedida WHERE id_unimedida = {$id}";
+	$query = "UPDATE tb_unimedida ativo = '0' WHERE id_unimedida = {$id}";
 	return mysqli_query($conexao, $query);
 }

@@ -19,19 +19,19 @@ function insereTipoExame($conexao, $nome, $valor1, $desc1, $valor2, $desc2, $val
 	return $resultadoDaInsercao;
 }
 
-function alteraTipoExame($conexao, $id, $nome, $valor1, $desc1, $valor2, $desc2, $valor3, $desc3, $valor4, $desc4, $valor5, $desc5, $auto_exame, $id_unimedida) {
+function alteraTipoExame($conexao, $id, $nome, $auto_exame) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$query = "UPDATE tb_tipo_exame SET nome='$nome', valor1='$valor1', desc1='$desc1', valor2='$valor2', desc2='$desc2', valor3='$valor3', desc3='$desc3', valor4='$valor4', desc4='$desc4', valor5='$valor5', desc5='$desc5', auto_exame='$auto_exame', id_unimedida=$id_unimedida WHERE id_tipo_exame=$id";
+	$query = "UPDATE tb_tipo_exame SET nome='$nome', auto_exame='$auto_exame' WHERE id_tipo_exame=$id";
 	return mysqli_query($conexao, $query);
 }
 
-function buscaTipoExame($conexao, $id) {
-	$query = "SELECT * FROM tb_tipo_exame WHERE id_tipo_exame = $id";
+function buscaTipoExame($conexao, $id_tipo_exame) {
+	$query = "SELECT * FROM tb_tipo_exame WHERE id_tipo_exame = $id_tipo_exame";
 	$resultado = mysqli_query($conexao, $query);
 	return mysqli_fetch_assoc($resultado);
 }
 
 function desativaTipoExame($conexao, $id) {
-	$query = "DELETE FROM tb_tipo_exame WHERE id_tipo_exame = $id";
+	$query = "UPDATE tb_tipo_exame SET ativo = '0' WHERE id_tipo_exame = $id";
 	return mysqli_query($conexao, $query);
 }

@@ -6,7 +6,7 @@ $id = $_POST["id"];
 $nome = $_POST["nome"];
 
 if(alteraArea($conexao, $id, $nome)) {
-	$_SESSION["success"] = "Área $nome alretado com sucesso.";
+	$_SESSION["success"] = "Área $nome alterado com sucesso.";
 	header("Location: area-lista.php");
 } else {
 	$msg = mysqli_error($conexao);

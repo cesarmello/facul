@@ -38,6 +38,6 @@ function buscaExame($conexao, $id) {
 }
 
 function desativaExame($conexao, $id) {
-	$query = "DELETE FROM tb_exame WHERE id_exame = {$id}";
+	$query = "UPDATE tb_exame SET ativo = '0' WHERE id_exame = {$id}";
 	return mysqli_query($conexao, $query);
 }
