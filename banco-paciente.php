@@ -13,7 +13,7 @@ function listaPacientes($conexao) {
 
 function inserePaciente($conexao, $nome, $cpf, $rg, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $email, $senha) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
-	$query = "INSERT INTO tb_paciente (nome, cpf, rg, cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel, email, senha, permissao) VALUES ('$nome', '$cpf', '$rg', $cep, '$rua', $numero, '$complemento', '$bairro', '$cidade', '$uf', $fixo, $movel, '$email', '$senha', '$permissao')";
+	$query = "INSERT INTO tb_paciente (nome, cpf, rg, cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel, email, senha, permissao, ativo) VALUES ('$nome', '$cpf', '$rg', $cep, '$rua', $numero, '$complemento', '$bairro', '$cidade', '$uf', $fixo, $movel, '$email', '$senha', '3', '1')";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }

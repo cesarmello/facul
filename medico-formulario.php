@@ -7,7 +7,7 @@ verificaUsuario();
 
 $medicos = array("id_medico" => "", "nome" => "", "razao" => "", "crm" => "", "senha" => "", "site" => "", "email" => "");
 ?>
-<h1>Adicionando Parceiro</h1>
+<h1>Adicionando Médico</h1>
 <form action="adiciona-medico.php" method="post">
 	<table class="table">
 	

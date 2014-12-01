@@ -13,7 +13,7 @@ function listaEspecialidades($conexao) {
 
 function insereEspecialidade($conexao, $especialidade, $id_area) {
 	$especialidade = mysqli_real_escape_string($conexao,$especialidade);
-	$query = "INSERT INTO tb_especialidade (especialidade, ativo, id_area) VALUES ('{$especialidade}', '1',{$id_area}')";
+	$query = "INSERT INTO tb_especialidade (especialidade, ativo, id_area) VALUES ('{$especialidade}', '1',{$id_area})";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }

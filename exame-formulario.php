@@ -1,26 +1,17 @@
 <?php
 require_once ('cabecalho.php');
-require_once ('banco-exame.php');
 require_once ('banco-tipo-exame.php');
 require_once ('logica-usuario.php');
-
 verificaUsuario();
+$tipoExames = listaTipoExames($conexao); ?>
 
-$exame = array("id_exame" => "", "valor_exame" => "", "diagnostico" => "", "qm_exame" => "", "auto_exame" => "");
-$exame = listaExames($conexao);
-$tipoExames = listaTipoExames($conexao);
-?>
-<h1>Adicionando resultado de exame</h1>
-<form action="adiciona-exame.php" method="post">
-	<table class="table">
-	
-		<?php require_once ('exame-formulario-base.php');?>
+<h1>Selecione qual exame deseja realizar</h1></td>
 
-		</tr>
+<table class="table">
+	<?php foreach ($tipoExames as $tipoExame) : ?>
 		<tr>
-			<td colspan="2"><input type="submit" value="Cadastrar" class="btn btn-primary" /></td>
+			<td><a href="exame-formulario-adiciona.php?id=<?=$tipoExame['id_tipo_exame']?>"><?=$tipoExame['nome']?></a></td>
 		</tr>
-
-	</table>
-</form>
+	<?php endforeach ?>
+</table>
 <?php require_once ('rodape.php'); ?>

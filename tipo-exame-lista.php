@@ -13,7 +13,7 @@ verificaUsuario();
 		<tr>
 			<td><h1 class="text-bold">Tipos de Exames</h1></td>
 			<td></td>
-			<td class="text-center"><a class="btn btn-primary" href="tipo-exame-formulario.php">Adicionar</a></td>
+			<td class="text-center"><a class="btn btn-primary" href="tipo-exame-formulario-adiciona.php">Adicionar</a></td>
 		</tr>
 		<tr>
 			<td class="text-bold">Nome</td>

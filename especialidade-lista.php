@@ -31,8 +31,8 @@ verificaUsuario();
 			<tr>
 				<td><?=$especialidade['especialidade'] ?></td>
 				<td><?=$especialidade['nomeesp'] ?></td>
-				<td><a class="btn btn-primary btn-sm" href="especialidade-altera-formulario.php?id=<?=$especialidade['id_especialidade']?>">Alterar</a></td>
-				<td class="text-center">
+				<td class="center"><a class="btn btn-primary btn-sm" href="especialidade-altera-formulario.php?id=<?=$especialidade['id_especialidade']?>">Alterar</a></td>
+				<td class="center">
 					<form action="desativa-especialidade.php" method="post">
 						<input type="hidden" name="id" value="<?=$especialidade['id_especialidade']?>">
 						<button class="btn btn-danger btn-sm">Desativar</button>

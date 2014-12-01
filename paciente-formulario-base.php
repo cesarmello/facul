@@ -16,7 +16,7 @@
 		</tr>
 		<tr>
 			<td>Rua</td>
-			<td><input type="text" id="rua" name="rua" value="<?=$paciente['rua']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="rua" name="rua" value="<?=$paciente['rua']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Número</td>
@@ -28,15 +28,15 @@
 		</tr>
 		<tr>
 			<td>Bairro</td>
-			<td><input type="text" id="bairro" name="bairro" value="<?=$paciente['bairro']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="bairro" name="bairro" value="<?=$paciente['bairro']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Cidade</td>
-			<td><input type="text" id="cidade" name="cidade" value="<?=$paciente['cidade']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="cidade" name="cidade" value="<?=$paciente['cidade']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>UF</td>
-			<td><input type="text" id="uf" name="uf" value="<?=$paciente['uf']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="uf" name="uf" value="<?=$paciente['uf']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Telefone Fixo</td>

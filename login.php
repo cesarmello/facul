@@ -9,6 +9,7 @@ if ($usuario == null) {
 } else {
 	$_SESSION["success"] = "Usuário logado com sucesso.";
 	logaUsuario($usuario["email"]);
+	$_SESSION["id_usuario"] = $usuario['id_login'];
 	header("Location: index.php");
 }
 die();

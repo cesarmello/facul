@@ -1,6 +1,16 @@
 <?php
 require_once ('conecta.php');
 
+function listaExameCampos($conexao, $id_tipo_exame ) {
+	$exames = array();
+	$resultado = mysqli_query($conexao, "SELECT * FROM tb_exame_campos WHERE id_tipo_exame = $id_tipo_exame AND ativo = '1'");
+
+	while($exame = mysqli_fetch_assoc($resultado)) {
+		array_push($exames, $exame);
+	}
+	return $exames;
+}
+
 function insereExameCampos($conexao, $nome_campo, $id_tipo_exame) {
 	$nome = mysqli_real_escape_string($conexao,$nome);
 	$query = "INSERT INTO tb_exame_campos (nome_campo, ativo, id_tipo_exame) 
@@ -10,13 +20,9 @@ function insereExameCampos($conexao, $nome_campo, $id_tipo_exame) {
 }
 
 function buscaExameCampos($conexao, $id_tipo_exame) {
-	$tipo_exames = array();
-	$resultado = mysqli_query($conexao, "SELECT * FROM tb_exame_campos WHERE id_tipo_exame = $id_tipo_exame AND ativo = '1'");
-
-	while($tipo_exame = mysqli_fetch_assoc($resultado)) {
-		array_push($tipo_exames, $tipo_exame);
-	}
-	return $tipo_exames;
+		$query = "SELECT * FROM tb_exame_campos WHERE id_tipo_exame = $id_tipo_exame AND ativo = '1'";
+	$resultado = mysqli_query($conexao, $query);
+	return mysqli_fetch_assoc($resultado);
 }
 
 function desativaExameCampo($conexao, $id) {

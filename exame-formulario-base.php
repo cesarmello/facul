@@ -1,31 +1,43 @@
+		<?php
+		if (!empty($exame['id_exame'])) {
+		echo '
 		<tr>
-			<td>Exame número</td>
-			<td><?=$exame['id_exame']?></td>
-		</tr>
+			<td>Exame Nº</td>
+			<td>'.$exame['id_exame'].'</td>
+		</tr>';
+		}
+		?>
 		<tr>
-			<td>Tipo Exame</td>
-			<td>
-				<select name="id_tipo_exame" class="form-control">
-					<option value="-1">Selecione o Exame</option>
-					<?php foreach ($tipoExames as $tipoExame) :
-						$essaEhAArea = $tipoExame['id_tipo_exame'] ==  $exame['id_tipo_exame'];
-						$selecao = $essaEhAArea ? "selected='selected'" : "";
-					?>
-					<option value="<?=$tipoExame['id_tipo_exame']?>"<?=$selecao?>><?=$tipoExame['nome']?></option>
-					<?php endforeach ?>
-				</select>
-			</td>
+			<td>Paciente</td>
+				<?php
+					if (!empty($exame['nome'])) {
+						echo '<td>'.$exame['nome'].'</td>';
+					}else{
+						echo '
+						<td>
+							<select name="id_paciente" class="form-control">
+								<option value="-1">Selecione o Paciente</option>';
+									foreach ($pacientes as $paciente) :
+										$essaEhAArea = $paciente['id_paciente'] == $exame['id_paciente'];
+										$selecao = $essaEhAArea ? "selected= 'selected '" : "";
+										echo '<option value="'.$paciente['id_paciente'].'" '.$selecao.'>'.$paciente['nome'].'</option>';
+									endforeach;
+									echo '
+							</select>
+						</td>';
+					}
+				?>
 		</tr>
-		<tr>
-			<td>Resultado do Exame</td>
-			<td><input type="text" name="valor_exame" value="<?=$exame['valor_exame']?>" class="form-control"/></td>
-		</tr>
+		<?php foreach ($exameCampos as $exameCampo) : $x++?>
+			<tr>
+				<td><?php echo $exameCampo['nome_campo']; ?></td>
+				<td><input type="text" name="valor<?=$x?>" class="form-control"/></td>
+			</tr>
+		<?php endforeach ?>
 		<tr>
 			<td>Diagnostico</td>
-			<td><textexame class="form-control" rows="5" id="diagnostico" name="diagnostico"><?=$exame['diagnostico']?></textexame></td>
-		</tr>
-		<input type="hidden" name="qm_exame" value="<?=$exame['qm_exame']?>">
-		<tr>
-			<td></td>
-			<td><label class="checkbox-inline"><input id="auto_exame" type="checkbox" value="<?=$exame['auto_exame']?>">Auto Exame</label></td>
+			<td>
+				<div class="form-group">
+					<textarea class="form-control" rows="5" id="diagnostico" name="diagnostico"><?=$exame['diagnostico']?></textarea>
+				</div>
 		</tr>
