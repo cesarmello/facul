@@ -52,5 +52,5 @@
 		</tr>
 		<tr>
 			<td>Senha</td>
-			<td><input type="text" id="senha" name="senha" value="<?=$paciente['senha']?>" class="form-control"/></td>
+			<td><input type="password" id="senha" name="senha" value="<?=$paciente['senha']?>" class="form-control"/></td>
 		</tr>

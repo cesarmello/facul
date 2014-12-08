@@ -8,11 +8,11 @@ verificaUsuario();
 $nome  = $_POST["nome"];
 $razao = $_POST["razao"];
 $crm   = $_POST["crm"];
-$senha = $_POST["senha"];
 $site  = $_POST["site"];
 $email = $_POST["email"];
+$senha = $_POST["senha"];
 
-if(insereMedico($conexao, $nome, $razao, $crm, $senha, $site, $email, $id_tipo_medico)) {
+if(insereMedico($conexao, $nome, $razao, $crm, $site, $email, $senha)) {
 	$_SESSION["success"] = "$nome adicionado com sucesso.";
 	header("Location: medico-formulario-endereco.php");
 } else {

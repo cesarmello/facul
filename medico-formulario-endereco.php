@@ -11,7 +11,6 @@ $endereco = array("cep" => "", "rua" => "", "numero" => "", "complemento" => "",
 	
 		<?php include ('medico-formulario-base-endereco.php');?>
 
-		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Cadastrar" class="btn btn-primary" /></td>
 		</tr>

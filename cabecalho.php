@@ -27,7 +27,7 @@ require_once ('mostra-alerta.php');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">Doctor Status</a>
+					<a class="navbar-brand logo" href="index.php"><img src="img/logoDrStatus.png" alt="Logo Dr. Status"></a>
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -49,7 +49,7 @@ require_once ('mostra-alerta.php');
 							<ul class="dropdown-menu">
 								<li><a href="#">Nova consulta</a></li>
 								<li><a href="#">Exibir Consultas</a></li>
-								<li><a href="#">Outro</a></li>
+								<li><a href="relatorios.php">Relatórios</a></li>
 							</ul>
 						</li>
 						<li><a href="logout.php">Sair</a></li>

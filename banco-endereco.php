@@ -13,16 +13,16 @@ function listaEnderecos($conexao) {
 
 function insereEndereco($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $id_medico) {
 	$complemento = mysqli_real_escape_string($conexao,$complemento);
-	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel, id_medico) 
-						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', '{$fixo}', '{$movel}', (select max(id_medico) from tb_medico))";
+	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel, ativo, id_medico) 
+						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', '{$fixo}', '{$movel}', '1', (select max(id_medico) from tb_medico))";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
 
 function insereEnd($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $id_medico) {
 	$complemento = mysqli_real_escape_string($conexao,$complemento);
-	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel id_medico) 
-						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', '{$fixo}', '{$movel}', {$id_medico})";
+	$query = "INSERT INTO tb_endereco (cep, rua, numero, complemento, bairro, cidade, uf, fixo, movel, ativo, id_medico) 
+						VALUES ({$cep}, '{$rua}', {$numero}, '{$complemento}', '{$bairro}', '{$cidade}', '{$uf}', '{$fixo}', '{$movel}', '1', {$id_medico})";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }

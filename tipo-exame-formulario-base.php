@@ -36,21 +36,21 @@
 
 		<table class="table">
 			<tr>
-				<td style="with: 60%;"><h1>Campos Cadastradas</h1></td>
+				<td style="with: 60%;"><h1>Campos Cadastrados</h1></td>
 				<td style="with: 10%;"></td>
 				<td style="with: 10%;"></td>
 				<td style="with: 20%;" class="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exameCampos">Adicionar</button></td>
 			</tr>
-			<?php $campos = buscaExameCampos($conexao, $id_tipo_exame);
-			foreach ($campos as $campo) : ?>
+			<?php $campo = buscaExameCampos($conexao, $id_tipo_exame);
+			foreach ($campo as $campos) : ?>
 			<tr>
-				<td><?=$campo['nome_campo'];?></td>
+				<td><?=$campos['nome_campo'];?></td>
 				<td></td>
 				<td></td>
 				<td  class="center">
 					<form action="desativa-exame-campos.php" method="post">
 						<input type="hidden" name="id_tipo_exame" value="<?=$id_tipo_exame?>">
-						<input type="hidden" name="id_exame_campos" value="<?=$campo['id_exame_campos']?>">
+						<input type="hidden" name="id_exame_campos" value="<?=$campos['id_exame_campos']?>">
 						<button class="btn btn-danger btn-sm">Desativar</button>
 					</form>
 				</td>
@@ -60,7 +60,7 @@
 
 		<table class="table">
 			<tr>
-				<td style="with: 60%;"><h1>Valores de Referencia</h1></td>
+				<td style="with: 60%;"><h1>Valores de Referência</h1></td>
 				<td style="with: 10%;"></td>
 				<td style="with: 10%;"></td>
 				<td style="with: 20%;" class="center"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#valorReferencia">Adicionar</button></td>

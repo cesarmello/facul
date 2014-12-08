@@ -1,23 +1,22 @@
 <?php
 require_once ('cabecalho.php');
 require_once ('banco-endereco.php');
-require_once ('banco-telefone.php');
 require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$id_medico = $_POST["id_medico"];
-$cep  = $_POST["cep"];
-$rua = $_POST["rua"];
-$numero = $_POST["numero"];
+$id_medico   = $_POST["id_medico"];
+$cep         = $_POST["cep"];
+$rua         = $_POST["rua"];
+$numero      = $_POST["numero"];
 $complemento = $_POST["complemento"];
-$bairro = $_POST["bairro"];
-$cidade = $_POST["cidade"];
-$uf = $_POST["uf"];
-$telefone = $_POST["telefone"];
+$bairro      = $_POST["bairro"];
+$cidade      = $_POST["cidade"];
+$uf          = $_POST["uf"];
+$fixo        = $_POST["fixo"];
+$movel       = $_POST["movel"];
 
-if(insereEnd($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $id_medico)) {
-	insereTelefone($conexao, $telefone);
+if(insereEnd($conexao, $cep, $rua, $numero, $complemento, $bairro, $cidade, $uf, $fixo, $movel, $id_medico)) {
 	$_SESSION["success"] = "Endereço adicionado com sucesso.";
 	header("Location: medico-altera-formulario.php?id=$id_medico");
 } else {

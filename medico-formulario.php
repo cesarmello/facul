@@ -5,7 +5,7 @@ require_once ('logica-usuario.php');
 
 verificaUsuario();
 
-$medicos = array("id_medico" => "", "nome" => "", "razao" => "", "crm" => "", "senha" => "", "site" => "", "email" => "");
+$medicos = array("id_medico" => "", "nome" => "", "razao" => "", "crm" => "", "senha" => "", "site" => "", "email" => "", "fixo" => "", "movel" => "");
 ?>
 <h1>Adicionando Médico</h1>
 <form action="adiciona-medico.php" method="post">
@@ -13,7 +13,6 @@ $medicos = array("id_medico" => "", "nome" => "", "razao" => "", "crm" => "", "s
 	
 		<?php require_once ('medico-formulario-base.php');?>
 
-		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Cadastrar" class="btn btn-primary" /></td>
 		</tr>

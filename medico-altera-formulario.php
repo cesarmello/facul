@@ -15,6 +15,7 @@ $ends = buscaEndMedico($conexao, $id_medico);
 <h1>Alterando Medico</h1>
 <form action="altera-medico.php" method="post">
 	<input type="hidden" name="id_medico" value="<?=$medico['id_medico']?>">
+	<input type="hidden" name="id_login" value="<?=$medico['id_login']?>">
 	Medico desde <?=$medico['data']?>
 	<table class="table">
 

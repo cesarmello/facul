@@ -20,9 +20,13 @@ function insereExameCampos($conexao, $nome_campo, $id_tipo_exame) {
 }
 
 function buscaExameCampos($conexao, $id_tipo_exame) {
-		$query = "SELECT * FROM tb_exame_campos WHERE id_tipo_exame = $id_tipo_exame AND ativo = '1'";
-	$resultado = mysqli_query($conexao, $query);
-	return mysqli_fetch_assoc($resultado);
+	$exames = array();
+	$resultado = mysqli_query($conexao, "SELECT * FROM tb_exame_campos WHERE id_tipo_exame = $id_tipo_exame AND ativo = '1'");
+
+	while($exame = mysqli_fetch_assoc($resultado)) {
+		array_push($exames, $exame);
+	}
+	return $exames;
 }
 
 function desativaExameCampo($conexao, $id) {

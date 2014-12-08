@@ -4,7 +4,7 @@
 		</tr>
 		<tr>
 			<td>Rua</td>
-			<td><input type="text" id="rua" name="rua" value="<?=$endereco['rua']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="rua" name="rua" value="<?=$endereco['rua']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Número</td>
@@ -16,15 +16,15 @@
 		</tr>
 		<tr>
 			<td>Bairro</td>
-			<td><input type="text" id="bairro" name="bairro" value="<?=$endereco['bairro']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="bairro" name="bairro" value="<?=$endereco['bairro']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Cidade</td>
-			<td><input type="text" id="cidade" name="cidade" value="<?=$endereco['cidade']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="cidade" name="cidade" value="<?=$endereco['cidade']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>UF</td>
-			<td><input type="text" id="uf" name="uf" value="<?=$endereco['uf']?>" class="form-control" readonly/></td>
+			<td><input type="text" id="uf" name="uf" value="<?=$endereco['uf']?>" class="form-control"/></td>
 		</tr>
 		<tr>
 			<td>Telefone</td>
